@@ -1,5 +1,5 @@
 {
-  "name": "login-system-jwt",
+  "name": "express-starter",
   "version": "1.0.0",
   "description": "NodeJS express starter pack",
   "main": "src/server.js",
