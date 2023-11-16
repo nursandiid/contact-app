@@ -1,0 +1,10 @@
+html,
+body {
+  height: 100%;
+}
+
+.alert-message {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}

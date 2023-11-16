@@ -1,40 +1,6 @@
-# NodeJS Express Starter Pack
+# NodeJS Express - Contact App
 
-This is a simple starter pack project with NodeJS & Express. There are several libraries includes in this project as default :
-
-- jest
-- supertest
-- joi
-- cors
-- dotenv
-
-## Folder structure
-```sh
- .
-├──  src
-│   ├──  applications
-│   │   ├──  database.js
-│   │   └──  web.js
-│   ├──  controllers
-│   ├──  middleware
-│   │   └──  error.middleware.js
-│   ├──  models
-│   ├──  responses
-│   │   ├──  error.response.js
-│   │   └──  success.response.js
-│   ├──  routes
-│   ├──  validations
-│   │   └──  validation.js
-│   └──  server.js
-├──  test
-│   ├──  feature
-│   │   └──  welcome.test.js
-│   └──  unit
-├──  babel.config.json
-├──  package-lock.json
-├──  package.json
-└──  README.md
-```
+This is a fullstack app with NodeJS and Express. Its template engine uses EJS and Bootstrap as the CSS framework.
 
 ## Installation
 
@@ -48,11 +14,7 @@ Create a new .env file and edit the credentials there.
 cp .env.example .env
 ```
 
-## Testing
-You can try it by running the unit tests or testing manually using postman.
-```sh
-npx jest
-```
+## Run
 
 Run your app.
 If you already have nodemon installed you can run this.

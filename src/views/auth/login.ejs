@@ -1,0 +1,38 @@
+<main class="form-signin m-auto">
+  <form method="post" action="/login">
+    <div class="text-center">
+      <a href="/">
+        <img class="mb-4" src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72"
+          height="57">
+      </a>
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    </div>
+
+    <div class="form-floating">
+      <input type="email" class="form-control <%= errors.has('email') && 'is-invalid' %>" id="email" name="email" value="<%= errors.old('email') %>"
+        onkeypress="this.parentNode.querySelector('small')?.remove()">
+      <label for="email">
+        Email address <br>
+        <small class="text-danger"><%= errors.has('email') ? errors.msg('email') : '' %></small>
+      </label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control <%= errors.has('password') && 'is-invalid' %>" id="password" name="password"
+        onkeypress="this.parentNode.querySelector('small')?.remove()">
+      <label for="password">
+        Password <br>
+        <small class="text-danger"><%= errors.has('password') ? errors.msg('password') : '' %></small>
+      </label>
+    </div>
+
+    <div class="form-check mb-3 text-start">
+      <input class="form-check-input" type="checkbox" value="1" id="remember" name="remember" <%= errors.has('remember') && 'checked' %>>
+      <label class="form-check-label" for="remember">
+        Remember Me
+      </label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">Don't Have An Account? Please <a href="/register">Register</a></p>
+  </form>
+</main>
