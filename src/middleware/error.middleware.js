@@ -1,6 +1,7 @@
 import Joi from 'joi'
 import express from 'express'
 import ErrorMsg from '../errors/message.error.js'
+import { capitalizeFirstLetter } from '../utils/helpers.js'
 
 /**
  *
@@ -11,18 +12,13 @@ import ErrorMsg from '../errors/message.error.js'
  * @returns
  */
 const errorMiddleware = async (err, req, res, next) => {
-  if (!err) {
-    next()
-    return
-  }
-
   if (err instanceof Joi.ValidationError) {
     req.flash('body', req.body)
     req.flash(
       'errors',
       err.details.map((detail) => ({
         name: detail.context.label,
-        message: detail.message?.replaceAll('"', '')
+        message: capitalizeFirstLetter(detail.message?.replaceAll('"', ''))
       }))
     )
 

@@ -4,6 +4,6 @@ import isAuthenticated from '../middleware/is-authenticated.js'
 
 const dashboardRouter = express.Router()
 
-dashboardRouter.get('/dashboard', isAuthenticated, dashboardController.index)
+dashboardRouter.get('/', isAuthenticated, dashboardController.showIndexPage)
 
 export default dashboardRouter

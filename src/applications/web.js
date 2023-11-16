@@ -10,6 +10,7 @@ import session from '../applications/session.js'
 import methodOverride from 'method-override'
 import authRouter from '../routes/auth.js'
 import dashboardRouter from '../routes/dashboard.js'
+import contactRouter from '../routes/contact.js'
 
 const app = express()
 
@@ -45,7 +46,8 @@ app.get('/', isGuest, (req, res) => {
   res.send(`Hi, it's working`)
 })
 app.use(authRouter)
-app.use(dashboardRouter)
+app.use('/dashboard', dashboardRouter)
+app.use('/contacts', contactRouter)
 
 app.use(errorMiddleware)
 app.use(notFoundMiddleware)

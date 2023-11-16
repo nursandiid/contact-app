@@ -6,7 +6,7 @@ import express from 'express'
  * @param {express.Response} res
  * @param {express.NextFunction} next
  */
-const index = async (req, res, next) => {
+const showIndexPage = async (req, res, next) => {
   try {
     res.render('dashboard', {
       title: 'Dashboard',
@@ -17,4 +17,4 @@ const index = async (req, res, next) => {
   }
 }
 
-export default { index }
+export default { showIndexPage }

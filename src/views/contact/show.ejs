@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h3><%= title %></h3>
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= contact.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= contact.phone %></h6>
+          <p class="small mb-0">
+            <a href="mailto:<%= contact.email %>" class="text-muted"><%= contact.email %></a>
+          </p>
+          <p class="small text-muted"><%= contact.address %></p>
+
+          <form action="/contacts/<%= contact.id %>" method="post" class="mb-3" 
+            onsubmit="return confirm('Are you sure?')">
+            <input type="hidden" name="_method" value="DELETE">
+
+            <a href="/contacts/<%= contact.id %>/edit" class="btn btn-info badge rounded-pill">edit</a>
+            <button class="btn btn-danger badge rounded-pill">delete</button>
+          </form>
+
+          <a href="/contacts" class="alert-link fw-normal">&laquo; Back to contacts</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,7 @@ import ValidationError from '../errors/validation.error.js'
  * @param {express.NextFunction} next
  */
 const globalVariables = async (req, res, next) => {
+  // req.flash can only appear once
   res.locals.success_msg = req.flash('success_msg')
   res.locals.error_msg = req.flash('error_msg')
   res.locals.errors = new ValidationError(
