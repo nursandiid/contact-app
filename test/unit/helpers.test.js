@@ -1,4 +1,7 @@
-import { capitalizeFirstLetter, capitalizeWords } from '../../src/utils/helpers.js'
+import {
+  capitalizeFirstLetter,
+  capitalizeWords
+} from '../../src/utils/helpers.js'
 
 it('should be able to convert string to be capitalize at first letter', () => {
   expect(capitalizeFirstLetter('name is empty')).toBe('Name is empty')

@@ -11,6 +11,7 @@ import methodOverride from 'method-override'
 import authRouter from '../routes/auth.js'
 import dashboardRouter from '../routes/dashboard.js'
 import contactRouter from '../routes/contact.js'
+import isAuthenticated from '../middleware/is-authenticated.js'
 
 const app = express()
 
@@ -42,7 +43,7 @@ app.use(globalVariablesMiddleware)
 
 dotenv.config()
 
-app.get('/', isGuest, (req, res) => {
+app.get('/', isGuest, isAuthenticated, (req, res) => {
   res.send(`Hi, it's working`)
 })
 app.use(authRouter)
